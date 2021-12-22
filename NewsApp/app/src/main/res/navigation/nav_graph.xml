@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.masai.sainath.newsapp.ui.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_onDetailsFragment"
+            app:destination="@id/onDetailsFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/onDetailsFragment"
+        android:name="com.masai.sainath.newsapp.ui.OnDetailsFragment"
+        android:label="OnDetailsFragment" >
+        <argument
+            android:name="article_result"
+            app:argType="com.masai.sainath.newsapp.remote.responses.ArticleModel" />
+        <action
+            android:id="@+id/action_onDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+</navigation>
